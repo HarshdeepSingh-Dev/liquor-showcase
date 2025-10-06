@@ -1,26 +1,49 @@
 @import "tailwindcss";
 
+/* ===== Root Theme Colors ===== */
 :root {
-  --background: #ffffff;
-  --foreground: #171717;
+  /* ===== Neutrals ===== */
+  --color-background: #F5F1E9; /* Creamy Off-white */
+  --color-foreground: #2C2C2C; /* Charcoal Gray */
+
+  /* ===== Brand Colors ===== */
+  --color-primary: #6B1E28;   /* Deep Burgundy */
+  --color-secondary: #CFA85A; /* Warm Gold */
+  --color-accent: #1E4D40;    /* Deep Emerald Green */
+
+  /* Optional hover / subtle variants */
+  --color-primary-light: #8B2A38;
+  --color-accent-light: #226A4A;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
+/* ===== Dark Mode ===== */
 @media (prefers-color-scheme: dark) {
   :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
+    --color-background: #0a0a0a;
+    --color-foreground: #ededed;
+
+    --color-primary: #6B1E28;   /* can keep same or adjust slightly */
+    --color-secondary: #CFA85A;
+    --color-accent: #1E4D40;
   }
 }
 
+/* ===== Base Styles ===== */
 body {
-  background: var(--background);
+  background-color: var(--background);
   color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: var(--font-inter, sans-serif);
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  text-rendering: optimizeLegibility;
+}
+
+/* ===== Utility Adjustments ===== */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-playfair, serif);
+  font-weight: 700;
+}
+
+p {
+  margin-bottom: 1rem;
 }
