@@ -14,6 +14,9 @@
   /* Optional hover / subtle variants */
   --color-primary-light: #8B2A38;
   --color-accent-light: #226A4A;
+
+  --font-heading: var(--font-playfair);
+  --font-body: var(--font-inter);
 }
 
 /* ===== Dark Mode ===== */
