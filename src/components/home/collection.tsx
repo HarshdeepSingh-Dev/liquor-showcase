@@ -1,5 +1,5 @@
 "use client";
-import { easeOut, motion, useInView, useScroll, useTransform } from "framer-motion";
+import { easeOut, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
 
@@ -123,56 +123,16 @@ const SignatureCollection = () => {
 
     return (
         <section className="relative w-full min-h-screen bg-gradient-to-br from-[#0f0806] via-[#1a0f0a] to-[#2d1810] overflow-hidden py-20">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0">
-                <motion.div
-                    className="absolute top-20 -right-32 w-[500px] h-[500px] bg-gradient-to-l from-[#d4af37]/8 to-transparent rounded-full blur-3xl"
-                    initial={{ x: 100, opacity: 0 }}
-                    animate={{ x: 0, opacity: 1 }}
-                    transition={{ duration: 1.5, delay: 0.3, ease: easeOut }}
-                />
-                <motion.div
-                    className="absolute bottom-40 -left-32 w-96 h-96 bg-gradient-to-r from-[#cd853f]/8 to-transparent rounded-full blur-3xl"
-                    initial={{ x: -100, opacity: 0 }}
-                    animate={{
-                        x: 0,
-                        opacity: 1,
-                        scale: [1, 1.2, 1],
-                    }}
-                    transition={{
-                        x: { duration: 1.5, delay: 0.5, ease: easeOut },
-                        opacity: { duration: 1.5, delay: 0.5, ease: easeOut },
-                        scale: { duration: 8, repeat: Infinity, ease: "easeInOut", delay: 2 }
-                    }}
-                />
+            <div className="absolute inset-0 pointer-events-none">
+                {/* Right glow */}
+                <div className="absolute top-28 -right-32 w-[500px] h-[500px] 
+                    bg-gradient-to-l from-[#d4af37]/20 to-transparent rounded-full blur-2xl 
+                    animate-pulse-slow" />
 
-                {/* Floating Particles */}
-                {[...Array(6)].map((_, i) => (
-                    <motion.div
-                        key={i}
-                        className="absolute w-2 h-2 bg-[#d4af37]/20 rounded-full"
-                        style={{
-                            left: `${20 + i * 15}%`,
-                            top: `${30 + i * 10}%`,
-                        }}
-                        initial={{ opacity: 0, scale: 0 }}
-                        animate={{
-                            opacity: [0, 0.8, 0.2],
-                            scale: [0, 1, 1],
-                            y: [0, -20, 0],
-                        }}
-                        transition={{
-                            opacity: { duration: 1, delay: 1 + i * 0.2 },
-                            scale: { duration: 1, delay: 1 + i * 0.2 },
-                            y: {
-                                duration: 3 + i,
-                                repeat: Infinity,
-                                ease: "easeInOut",
-                                delay: 2 + i * 0.5
-                            }
-                        }}
-                    />
-                ))}
+                    {/* left */}
+                <div className="absolute top-10 -left-32 w-[500px] h-[500px] 
+                    bg-gradient-to-l from-[#d4af37]/8 to-transparent rounded-full blur-2xl 
+                    animate-pulse-slow" />
             </div>
 
             <div className="relative z-10 container mx-auto px-4 md:px-20">
@@ -222,8 +182,8 @@ const SignatureCollection = () => {
                         <motion.button
                             key={category}
                             className={`px-6 py-3 rounded-full font-medium tracking-wide transition-all duration-300 ${filter === category
-                                    ? 'bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] shadow-lg'
-                                    : 'bg-transparent border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37]'
+                                ? 'bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] shadow-lg'
+                                : 'bg-transparent border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37]'
                                 }`}
                             onClick={() => setFilter(category)}
                             variants={itemVariants}
@@ -231,7 +191,7 @@ const SignatureCollection = () => {
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                         >
-                            {category === 'all' ? 'All Spirits' : category}
+                            {category === 'all' ? 'Complete Range' : category}
                         </motion.button>
                     ))}
                 </motion.div>
@@ -299,7 +259,7 @@ const SignatureCollection = () => {
                                     whileHover={{ opacity: 1 }}
                                 >
                                     <motion.button
-                                        className="bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg"
+                                        className="bg-gradient-to-r from-[#d4af37] to-[#f4d03f] hover:cursor-pointer text-[#1a0f0a] px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >

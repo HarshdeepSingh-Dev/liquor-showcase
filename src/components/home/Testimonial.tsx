@@ -4,57 +4,63 @@ import { useState, useRef, useEffect } from "react";
 import Image from "next/image";
 
 const testimonials = [
-    {
-        id: 1,
-        name: "Arjun Malhotra",
-        title: "Whisky Connoisseur & Collector",
-        company: "Private Collection, Mumbai",
-        image: "/images/testimonials/customer1.jpg", // Replace with actual images
-        rating: 5,
-        quote: "The craftsmanship in every bottle is extraordinary. Each sip tells a story of heritage and passion that's been perfected over generations. This is what premium Indian spirits should be.",
-        featured: true
-    },
-    {
-        id: 2,
-        name: "Priya Sharma",
-        title: "Luxury Event Curator",
-        company: "Elite Events Delhi",
-        image: "/images/testimonials/customer2.jpg",
-        rating: 5,
-        quote: "Our clients consistently praise the exceptional quality and sophisticated presentation. These spirits have become our signature choice for high-end celebrations.",
-        featured: false
-    },
-    {
-        id: 3,
-        name: "James Wilson",
-        title: "International Spirits Judge",
-        company: "World Spirits Competition",
-        image: "/images/testimonials/customer3.jpg",
-        rating: 5,
-        quote: "Remarkably complex flavor profiles with an authentic Indian character. The attention to detail in production is evident in every aspect - from aroma to finish.",
-        featured: true
-    },
-    {
-        id: 4,
-        name: "Meera Gupta",
-        title: "Restaurant Owner",
-        company: "Michelin Star Restaurant, Goa",
-        image: "/images/testimonials/customer4.jpg",
-        rating: 5,
-        quote: "Our discerning guests appreciate the authentic heritage and premium quality. These spirits perfectly complement our fine dining experience.",
-        featured: false
-    },
-    {
-        id: 5,
-        name: "Robert Chen",
-        title: "Master Sommelier",
-        company: "International Wine & Spirit Guild",
-        image: "/images/testimonials/customer5.jpg",
-        rating: 5,
-        quote: "An exceptional representation of Indian distilling artistry. The balance, complexity, and finish rival the world's finest premium spirits.",
-        featured: true
-    }
+  {
+    id: 1,
+    name: "Arjun Malhotra",
+    title: "Whisky Connoisseur & Collector",
+    company: "Private Collection, Mumbai",
+    image: "/images/testimonials/customer1.jpg",
+    rating: 5,
+    quote:
+      "The craftsmanship in every bottle is extraordinary. Each sip tells that it has been perfected over generations. That's what premium Indian spirits should be.",
+    featured: true,
+  },
+  {
+    id: 2,
+    name: "Priya Sharma",
+    title: "Luxury Event Curator",
+    company: "Elite Events Delhi",
+    image: "/images/testimonials/customer2.jpg",
+    rating: 5,
+    quote:
+      "Our clients consistently praise the exceptional quality and sophisticated presentation. These spirits have become our signature choice for high-end celebrations.",
+    featured: false,
+  },
+  {
+    id: 3,
+    name: "Rahul Deshpande",
+    title: "Spirits Competition Judge",
+    company: "Indian Beverage Excellence Awards",
+    image: "/images/testimonials/customer3.jpg",
+    rating: 5,
+    quote:
+      "Remarkably complex flavor profiles with an authentic Indian character. The attention to detail in production is evident in every aspect - from aroma to finish.",
+    featured: true,
+  },
+  {
+    id: 4,
+    name: "Meera Gupta",
+    title: "Restaurant Owner",
+    company: "Michelin Star Restaurant, Goa",
+    image: "/images/testimonials/customer4.jpg",
+    rating: 5,
+    quote:
+      "Our discerning guests appreciate the authentic heritage and premium quality. These spirits perfectly complement our fine dining experience.",
+    featured: false,
+  },
+  {
+    id: 5,
+    name: "Karan Mukherjee",
+    title: "Master Taster",
+    company: "Indian Spirit & Wine Guild",
+    image: "/images/testimonials/customer5.jpg",
+    rating: 5,
+    quote:
+      "An exceptional representation of Indian distilling artistry. The balance, complexity, and finish rival the world's finest premium spirits.",
+    featured: true,
+  },
 ];
+
 
 const Testimonials = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
@@ -211,7 +217,7 @@ const Testimonials = () => {
 
                                 {/* Quote */}
                                 <blockquote className="text-2xl md:text-3xl lg:text-4xl font-light text-[#f5f0e8] leading-relaxed italic">
-                                    "{currentTestimonial.quote}"
+                                    &quot;{currentTestimonial.quote}&quot;
                                 </blockquote>
 
                                 {/* Author Info */}

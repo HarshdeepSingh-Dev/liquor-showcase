@@ -38,26 +38,7 @@ const BrandStory = () => {
 
     return (
         <section className="relative w-full min-h-screen bg-gradient-to-br from-[#1a0f0a] via-[#2d1810] to-[#0f0806] overflow-hidden">
-            {/* Animated Background Elements */}
-            <div className="absolute inset-0">
-                <motion.div
-                    className="absolute top-20 -left-20 w-96 h-96 bg-gradient-to-r from-[#d4af37]/10 to-transparent rounded-full blur-3xl"
-                    animate={{
-                        x: [0, 100, 0],
-                        y: [0, -50, 0],
-                    }}
-                    transition={{ duration: 20, repeat: Infinity, ease: "linear" }}
-                />
-                <motion.div
-                    className="absolute bottom-20 -right-20 w-96 h-96 bg-gradient-to-l from-[#cd853f]/10 to-transparent rounded-full blur-3xl"
-                    animate={{
-                        x: [0, -100, 0],
-                        y: [0, 50, 0],
-                    }}
-                    transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
-                />
-            </div>
-
+            
             <div ref={ref} className="relative z-10 container mx-auto px-8 py-20 md:py-32">
                 <motion.div
                     className="grid lg:grid-cols-2 gap-16 items-center"
@@ -184,7 +165,7 @@ const BrandStory = () => {
                             variants={itemVariants}
                         >
                             <blockquote className="text-[#f5f0e8] text-lg font-medium italic leading-relaxed">
-                                "Excellence is not a skill, it's an attitude passed down through generations."
+                                &quot;Excellence is not a skill, it&apos;s an attitude passed down through generations.&quot;
                             </blockquote>
                             <cite className="text-[#d4af37] text-sm font-medium mt-2 block">
                                 — Master Distiller, 5th Generation
@@ -197,7 +178,7 @@ const BrandStory = () => {
             {/* Decorative Elements */}
             <motion.div
                 className="absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2 w-px h-32 bg-gradient-to-b from-transparent via-[#d4af37]/50 to-transparent"
-                animate={{ scaleY: [1, 1.5, 1] }}
+                animate={{ scaleY: [1, 2, 1] }}
                 transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
             />
         </section>
