@@ -38,7 +38,7 @@ const Footer = () => (
           <circle cx="32" cy="32" r="30" stroke="#d4af37" strokeWidth="2" fill="none" />
           <path d="M20 44 L32 20 L44 44 Z" fill="#d4af37" />
         </svg>
-        <span className="text-lg font-bold tracking-widest uppercase">Craft Spirits</span>
+        <span className="text-lg font-bold tracking-widest uppercase">House of somrass</span>
       </motion.div>
 
       {/* Social Links */}

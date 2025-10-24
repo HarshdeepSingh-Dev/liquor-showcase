@@ -11,7 +11,7 @@ export default function Navbar() {
     <nav className="w-full bg-gradient-to-r from-[#2d1a0f] via-[#3d2114] to-[#1a130d] py-4 px-6 md:px-10 flex justify-between items-center shadow-lg relative z-50">
       {/* Logo */}
       <span className="text-2xl font-serif font-bold text-white tracking-wide">
-        Craft Spirits
+        House Of Somrass
       </span>
 
       {/* Desktop Links */}

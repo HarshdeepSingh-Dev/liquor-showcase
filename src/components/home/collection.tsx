@@ -129,7 +129,7 @@ const SignatureCollection = () => {
                     bg-gradient-to-l from-[#d4af37]/20 to-transparent rounded-full blur-2xl 
                     animate-pulse-slow" />
 
-                    {/* left */}
+                {/* left */}
                 <div className="absolute top-10 -left-32 w-[500px] h-[500px] 
                     bg-gradient-to-l from-[#d4af37]/8 to-transparent rounded-full blur-2xl 
                     animate-pulse-slow" />
@@ -181,7 +181,7 @@ const SignatureCollection = () => {
                     {categories.map((category, index) => (
                         <motion.button
                             key={category}
-                            className={`px-6 py-3 rounded-full font-medium tracking-wide transition-all duration-300 ${filter === category
+                            className={`px-6 hidden lg:block py-3 rounded-full font-medium tracking-wide transition-all duration-300 ${filter === category
                                 ? 'bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] shadow-lg'
                                 : 'bg-transparent border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37]'
                                 }`}
@@ -196,6 +196,36 @@ const SignatureCollection = () => {
                     ))}
                 </motion.div>
 
+                {/* fliter dropdown below lg screen */}
+                <div className="block lg:hidden mb-10">
+                    <div className="relative">
+                        <select
+                            className="w-full appearance-none px-5 py-3 rounded-full border border-[#d4af37]/40 
+                            bg-[#1a0f0a] text-[#d4af37] font-medium tracking-wide 
+                            focus:outline-none focus:border-[#d4af37] focus:shadow-[0_0_8px_rgba(212,175,55,0.6)] 
+                            transition-all duration-300"
+                            value={filter}
+                            onChange={(e) => setFilter(e.target.value)}
+                        >
+                            {categories.map((category) => (
+                                <option
+                                    key={category}
+                                    value={category}
+                                    className="text-white"
+                                >
+                                    {category === 'all' ? 'Complete Range' : category}
+                                </option>
+                            ))}
+                        </select>
+
+                        {/* Custom Arrow Icon */}
+                        <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-[#d4af37]">
+                            ▼
+                        </span>
+                    </div>
+                </div>
+
+
                 {/* Products Grid */}
                 <motion.div
                     className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 md:gap-12"
@@ -205,7 +235,7 @@ const SignatureCollection = () => {
                     {filteredProducts.map((product, i) => (
                         <motion.div
                             key={product.id}
-                            className="group relative bg-gradient-to-b from-[#2d1810]/50 to-[#1a0f0a]/80 backdrop-blur-xl border border-[#d4af37]/20 rounded-3xl overflow-hidden shadow-2xl"
+                            className="group flex flex-col justify-between relative bg-gradient-to-b from-[#2d1810]/50 to-[#1a0f0a]/80 backdrop-blur-xl border border-[#d4af37]/20 rounded-3xl overflow-hidden shadow-2xl"
                             variants={cardVariants}
                             custom={i}
                             whileHover="hover"
@@ -269,7 +299,7 @@ const SignatureCollection = () => {
                             </div>
 
                             {/* Product Info */}
-                            <div className="p-6 space-y-4">
+                            <div className="p-6 flex flex-col justify-between gap-3">
                                 {/* Category & Age */}
                                 <div className="flex justify-between items-center">
                                     <span className="text-[#d4af37] text-sm font-medium tracking-wider uppercase">
@@ -292,15 +322,15 @@ const SignatureCollection = () => {
 
                                 {/* Price & CTA */}
                                 <div className="flex items-center justify-between pt-4 border-t border-[#d4af37]/20">
-                                    <div className="text-3xl font-bold text-[#d4af37]">
+                                    {/* <div className="text-3xl font-bold text-[#d4af37]">
                                         {product.price}
-                                    </div>
+                                    </div> */}
                                     <motion.button
-                                        className="bg-transparent border-2 border-[#d4af37] text-[#d4af37] px-5 py-2 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] font-semibold tracking-wide transition-all duration-300 group/btn"
+                                        className="bg-transparent border-2 w-full border-[#d4af37] text-[#d4af37] px-5 py-2 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] font-semibold tracking-wide transition-all duration-300 group/btn"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
-                                        <span className="group-hover/btn:scale-110 transition-transform duration-300">
+                                        <span className="group-hover/btn:scale-110 font-bold text-xl transition-transform duration-300">
                                             Explore
                                         </span>
                                     </motion.button>
@@ -311,29 +341,18 @@ const SignatureCollection = () => {
                 </motion.div>
 
                 {/* View All Button */}
-                <motion.div
-                    className="text-center mt-16"
-                    initial={{ opacity: 0, y: 40 }}
-                    animate={mounted ? { opacity: 1, y: 0 } : { opacity: 0, y: 40 }}
-                    transition={{ delay: 2, duration: 0.8, ease: easeOut }}
+                <div className="text-center mt-16 w-full"
                 >
                     <motion.button
-                        className="group relative bg-transparent border-2 border-[#d4af37] text-[#d4af37] px-10 py-4 font-semibold text-xl tracking-wider transition-all duration-500 overflow-hidden rounded-2xl"
-                        whileHover={{
-                            boxShadow: "0 0 40px rgba(212, 175, 55, 0.4)",
-                            borderColor: "#f4d03f"
-                        }}
-                        whileTap={{ scale: 0.98 }}
+                        className="bg-transparent border-2 w-fit border-[#d4af37]  text-[#d4af37] px-6 py-3 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] text-base md:text-lg lg:text-xl font-bold tracking-wide transition-all duration-300 group/btn"
+                        whileHover={{ scale: 1.05 }}
+                        whileTap={{ scale: 0.95 }}
                     >
                         <span className="relative z-10 transition-colors duration-500 group-hover:text-[#1a0f0a]">
                             View Complete Collection
                         </span>
-                        <motion.div
-                            className="absolute inset-0 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] scale-x-0 group-hover:scale-x-100 origin-center transition-transform duration-500"
-                            initial={{ scaleX: 0 }}
-                        />
                     </motion.button>
-                </motion.div>
+                </div>
             </div>
         </section>
     );

@@ -8,28 +8,29 @@ const awards = [
     name: "World Spirits Gold Award",
     year: "2024",
     image: "/images/home-page/certificate.jpg",
-    description: "Best Premium Whisky, International Spirits Competition",
+    description: "Awarded Best Premium Whisky – House of somrass, International Spirits Competition",
   },
   {
     name: "Asia Distillers Trophy",
     year: "2023",
     image: "/images/home-page/certificate.jpg",
-    description: "Top Distiller in Asia for Craft Brandy Excellence",
+    description: "Recognized as Asia’s Top Craft Distiller for Brandy Excellence – House of somrass",
   },
   {
-    name: "Sommeliers' Choice",
+    name: "Sommeliers' Choice Award",
     year: "2023",
     image: "/images/home-page/certificate.jpg",
-    description: "Voted #1 in Heritage and Authenticity, Sommeliers Guild",
+    description: "Voted #1 in Heritage & Authenticity – House of somrass, Sommeliers Guild",
   },
   {
     name: "Luxury Spirits Innovator",
     year: "2022",
     image: "/images/home-page/certificate.jpg",
     description:
-      "Pioneering New Standards in Craft Spirits – Drinks Magazine",
+      "Honored for Redefining Luxury Standards in Fine Spirits – House of somrass, Drinks Magazine",
   },
 ];
+
 
 const containerVariants = {
   hidden: { opacity: 0 },
