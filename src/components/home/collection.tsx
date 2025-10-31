@@ -2,8 +2,20 @@
 import { easeOut, motion } from "framer-motion";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import ProductDetails from "./ProductDetails";
 
-const products = [
+type Product = {
+    id: number;
+    name: string;
+    description: string;
+    img: string;
+    price: string;
+    category: string;
+    age: string;
+    featured: boolean;
+};
+
+const products: Product[] = [
     {
         id: 1,
         name: "Golden Reserve Whisky",
@@ -69,11 +81,16 @@ const products = [
 const SignatureCollection = () => {
     const [filter, setFilter] = useState('all');
     const [mounted, setMounted] = useState(false);
+    const [selectedProd, setSelectedProd] = useState<Product | null>(null);
 
     // Trigger animations on component mount
     useEffect(() => {
         setMounted(true);
     }, []);
+
+    const handleClick = (product: Product) => {
+        setSelectedProd(product)
+    }
 
     const categories = ['all', 'Premium Whisky', 'Aged Rum', 'Premium Brandy', 'Craft Gin', 'Single Malt', 'Premium Vodka'];
 
@@ -144,7 +161,7 @@ const SignatureCollection = () => {
                     animate={mounted ? "visible" : "hidden"}
                 >
                     <motion.div className="inline-block mb-6" variants={itemVariants}>
-                        <span className="text-[#d4af37] text-sm font-medium tracking-[0.2em] uppercase border border-[#d4af37]/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <span className="text-[#BE9252] text-sm font-medium tracking-[0.2em] uppercase border border-[#BE9252]/30 px-4 py-2 rounded-full backdrop-blur-sm">
                             Premium Collection
                         </span>
                     </motion.div>
@@ -155,7 +172,7 @@ const SignatureCollection = () => {
                     >
                         Signature
                         <motion.span
-                            className="block text-transparent bg-gradient-to-r from-[#d4af37] to-[#f4d03f] bg-clip-text"
+                            className="block text-[#BE9252] to-[#d6b47a] bg-clip-text"
                             variants={itemVariants}
                         >
                             Collection
@@ -182,8 +199,8 @@ const SignatureCollection = () => {
                         <motion.button
                             key={category}
                             className={`px-6 hidden lg:block py-3 rounded-full font-medium tracking-wide transition-all duration-300 ${filter === category
-                                ? 'bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] shadow-lg'
-                                : 'bg-transparent border border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37]'
+                                ? 'bg-gradient-to-r from-[#BE9252] to-[#d6b47a] text-[#1a0f0a] shadow-lg'
+                                : 'bg-transparent border border-[#d4af37]/30 text-[#BE9252] hover:bg-[#d4af37]/10 hover:border-[#d4af37]'
                                 }`}
                             onClick={() => setFilter(category)}
                             variants={itemVariants}
@@ -201,7 +218,7 @@ const SignatureCollection = () => {
                     <div className="relative">
                         <select
                             className="w-full appearance-none px-5 py-3 rounded-full border border-[#d4af37]/40 
-                            bg-[#1a0f0a] text-[#d4af37] font-medium tracking-wide 
+                            bg-[#1a0f0a] text-[#BE9252] font-medium tracking-wide 
                             focus:outline-none focus:border-[#d4af37] focus:shadow-[0_0_8px_rgba(212,175,55,0.6)] 
                             transition-all duration-300"
                             value={filter}
@@ -219,7 +236,7 @@ const SignatureCollection = () => {
                         </select>
 
                         {/* Custom Arrow Icon */}
-                        <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-[#d4af37]">
+                        <span className="pointer-events-none absolute right-5 top-1/2 -translate-y-1/2 text-[#BE9252]">
                             ▼
                         </span>
                     </div>
@@ -244,7 +261,7 @@ const SignatureCollection = () => {
                             {/* Featured Badge */}
                             {product.featured && (
                                 <motion.div
-                                    className="absolute top-4 right-4 z-20 bg-gradient-to-r from-[#d4af37] to-[#f4d03f] text-[#1a0f0a] px-3 py-1 rounded-full text-xs font-bold tracking-wider"
+                                    className="absolute top-4 right-4 z-20 bg-gradient-to-r from-[#BE9252] to-[#d6b47a] text-[#1a0f0a] px-3 py-1 rounded-full text-xs font-bold tracking-wider"
                                     initial={{ opacity: 0, scale: 0 }}
                                     animate={{ opacity: 1, scale: 1 }}
                                     transition={{ delay: 1.5 + i * 0.1, duration: 0.5, ease: "backOut" }}
@@ -289,7 +306,8 @@ const SignatureCollection = () => {
                                     whileHover={{ opacity: 1 }}
                                 >
                                     <motion.button
-                                        className="bg-gradient-to-r from-[#d4af37] to-[#f4d03f] hover:cursor-pointer text-[#1a0f0a] px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg"
+                                        onClick={() => handleClick(product)}
+                                        className="bg-gradient-to-r from-[#BE9252] to-[#d6b47a] hover:cursor-pointer text-[#1a0f0a] px-6 py-3 rounded-full font-semibold tracking-wide shadow-lg"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
@@ -302,7 +320,7 @@ const SignatureCollection = () => {
                             <div className="p-6 flex flex-col justify-between gap-3">
                                 {/* Category & Age */}
                                 <div className="flex justify-between items-center">
-                                    <span className="text-[#d4af37] text-sm font-medium tracking-wider uppercase">
+                                    <span className="text-[#BE9252] text-sm font-medium tracking-wider uppercase">
                                         {product.category}
                                     </span>
                                     <span className="text-[#b8a690] text-sm">
@@ -311,7 +329,7 @@ const SignatureCollection = () => {
                                 </div>
 
                                 {/* Product Name */}
-                                <h3 className="text-2xl font-serif font-bold text-[#f5f0e8] leading-tight group-hover:text-[#d4af37] transition-colors duration-300">
+                                <h3 className="text-2xl font-serif font-bold text-[#f5f0e8] leading-tight group-hover:text-[#BE9252] transition-colors duration-300">
                                     {product.name}
                                 </h3>
 
@@ -322,11 +340,11 @@ const SignatureCollection = () => {
 
                                 {/* Price & CTA */}
                                 <div className="flex items-center justify-between pt-4 border-t border-[#d4af37]/20">
-                                    {/* <div className="text-3xl font-bold text-[#d4af37]">
+                                    {/* <div className="text-3xl font-bold text-[#BE9252]">
                                         {product.price}
                                     </div> */}
                                     <motion.button
-                                        className="bg-transparent border-2 w-full border-[#d4af37] text-[#d4af37] px-5 py-2 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] font-semibold tracking-wide transition-all duration-300 group/btn"
+                                        className="bg-traPnsparent border-2 w-full border-[#d4af37] text-[#BE9252] px-5 py-2 rounded-lg hover:bg-[#d4af37] ohover:text-[#1a0f0a] font-semibold tracking-wide transition-all duration-300 group/btn"
                                         whileHover={{ scale: 1.05 }}
                                         whileTap={{ scale: 0.95 }}
                                     >
@@ -344,7 +362,7 @@ const SignatureCollection = () => {
                 <div className="text-center mt-16 w-full"
                 >
                     <motion.button
-                        className="bg-transparent border-2 w-fit border-[#d4af37]  text-[#d4af37] px-6 py-3 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] text-base md:text-lg lg:text-xl font-bold tracking-wide transition-all duration-300 group/btn"
+                        className="bg-transparent border-2 w-fit border-[#d4af37]  text-[#BE9252] px-6 py-3 rounded-lg hover:bg-[#d4af37] hover:text-[#1a0f0a] text-base md:text-lg lg:text-xl font-bold tracking-wide transition-all duration-300 group/btn"
                         whileHover={{ scale: 1.05 }}
                         whileTap={{ scale: 0.95 }}
                     >
@@ -354,6 +372,14 @@ const SignatureCollection = () => {
                     </motion.button>
                 </div>
             </div>
+
+            {/* selected product overlay */}
+            {selectedProd &&
+                // Overlay backdrop
+                <div onClick={() => setSelectedProd(null)} className="fixed inset-0 z-40 bg-[#0f0806cc] flex justify-center items-center px-2">
+                    <ProductDetails product={selectedProd} />
+                </div>
+            }
         </section>
     );
 };

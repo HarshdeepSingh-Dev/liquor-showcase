@@ -20,7 +20,7 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.2, duration: 0.7 }}
                 >
-                    Discover the Craft Behind Fine Spirits
+                    From Ambition to Craft: The House of Somrass
                 </motion.h1>
                 <motion.p
                     className="font-medium xl:text-xl md:text-lg text-base font-sans text-white max-w-xl text-center mx-auto"
@@ -28,17 +28,20 @@ const Hero = () => {
                     animate={{ opacity: 1, y: 0 }}
                     transition={{ delay: 0.4, duration: 0.7 }}
                 >
-                    A showcase of distinguished liquor brands from India - crafted with heritage,
-                    tradition, and responsibility.
+                    Birthed in a small room, our whiskey blends spirit, soul, and a legacy of patience into each sip. Discover small-batch creations made with care and curiosity.
                 </motion.p>
                 <motion.button
                     className="mt-8 bg-transparent hover:bg-white/25 border-2 mx-auto text-lg block font-sans text-white font-semibold px-6 py-3 hover:cursor-pointer hover:scale-105 transition-all duration-300"
+                    onClick={() => {
+                        const section = document.getElementById("story");
+                        if (section) section.scrollIntoView({ behavior: "smooth" });
+                    }}
                     initial={{ opacity: 0, scale: 0.9 }}
                     animate={{ opacity: 1, scale: 1 }}
                     transition={{ delay: 0.7, duration: 0.6 }}
-                    // whileHover={{ scale: 1.04, backgroundColor: "rgba(255,255,255,0.1)" }}
+                // whileHover={{ scale: 1.04, backgroundColor: "rgba(255,255,255,0.1)" }}
                 >
-                    Explore Our Collection
+                    Read Our Story
                 </motion.button>
             </motion.div>
         </div>

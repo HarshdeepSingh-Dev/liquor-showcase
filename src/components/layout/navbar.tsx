@@ -1,4 +1,5 @@
 'use client';
+import Image from 'next/image';
 import Link from 'next/link';
 import { useState } from 'react';
 import { motion, AnimatePresence } from 'framer-motion';
@@ -10,9 +11,12 @@ export default function Navbar() {
   return (
     <nav className="w-full bg-gradient-to-r from-[#2d1a0f] via-[#3d2114] to-[#1a130d] py-4 px-6 md:px-10 flex justify-between items-center shadow-lg relative z-50">
       {/* Logo */}
-      <span className="text-2xl font-serif font-bold text-white tracking-wide">
-        House Of Somrass
-      </span>
+      <Image
+        src="/images/home-page/brand_logo1.png"
+        alt="House of somras"
+        width={60}
+        height={60}
+      />
 
       {/* Desktop Links */}
       <div className="hidden md:flex gap-8">

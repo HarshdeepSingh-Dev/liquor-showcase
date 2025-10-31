@@ -7,6 +7,9 @@ import Testimonials from "@/components/home/Testimonial";
 import AwardsSection from "@/components/home/AwardsSection";
 import ResponsibleDrinkingSection from "@/components/home/ResponsibleDrinking";
 import Footer from "@/components/layout/Footer";
+import StorySection from "@/components/home/StorySection";
+import ProductDetails from "@/components/home/ProductDetails";
+import { img } from "framer-motion/client";
 
 export default function Home() {
   return (
@@ -14,6 +17,9 @@ export default function Home() {
       <Navbar />
       {/* hero */}
       <Hero />
+
+      {/* story section */}
+      <StorySection />
 
       {/* our collection */}
       <SignatureCollection />
@@ -28,10 +34,9 @@ export default function Home() {
       <AwardsSection />
 
       {/* responsible drinking */}
-      <ResponsibleDrinkingSection/>
+      <ResponsibleDrinkingSection />
 
-
-      <Footer/>
+      <Footer />
     </SmoothScrolling>
   );
 }

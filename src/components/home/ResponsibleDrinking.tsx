@@ -11,7 +11,7 @@ const ResponsibleDrinkingSection = () => (
   <section className="relative w-full py-16 bg-gradient-to-r from-[#0f0806] via-[#1a0f0a] to-[#2d1810] overflow-hidden">
     {/* Subtle luxury gradient accent */}
     <motion.div
-      className="absolute -top-16 -right-24 w-[350px] h-[330px] bg-gradient-to-bl from-[#d4af37]/20 via-[#bfa145]/10 to-transparent rounded-full blur-3xl z-0"
+      className="absolute -top-16 -right-24 w-[350px] h-[330px] bg-gradient-to-bl from-[#BE9252]/20 via-[#bfa145]/10 to-transparent rounded-full blur-3xl z-0"
       initial={{ opacity: 0, scale: 0.9 }}
       animate={{ opacity: 0.18, scale: 1 }}
       transition={{ duration: 1, delay: 0.2 }}
@@ -25,11 +25,11 @@ const ResponsibleDrinkingSection = () => (
         viewport={{ once: true, amount: 0.4 }}
         variants={variants}
       >
-        <span className="text-[#d4af37] text-xs font-semibold tracking-[0.25em] uppercase border border-[#d4af37]/30 px-5 py-1.5 rounded-full inline-block mb-4">
+        <span className="text-[#BE9252] text-xs font-semibold tracking-[0.25em] uppercase border border-[#BE9252]/30 px-5 py-1.5 rounded-full inline-block mb-4">
           Please Enjoy Responsibly
         </span>
         <h2 className="text-3xl md:text-5xl font-serif font-bold text-[#f5f0e8] mb-4">
-          The Luxury of <span className="text-transparent bg-gradient-to-r from-[#d4af37] to-[#f4d03f] bg-clip-text">Responsibility</span>
+          The Luxury of <span className="bg-gradient-to-r text-[#BE9252]">Responsibility</span>
         </h2>
         <p className="text-[#d0c4b6] text-lg max-w-2xl mx-auto font-medium">
           Our craft reflects care and heritage. We invite you to savor our spirits with the same respect—for yourself, your company, and your community.
@@ -44,21 +44,21 @@ const ResponsibleDrinkingSection = () => (
         variants={variants}
       >
         <div className="flex flex-col items-center text-center">
-          <Wine className="text-[#d4af37] w-14 h-14 mb-3" />
+          <Wine className="text-[#BE9252] w-14 h-14 mb-3" />
           <h4 className="text-lg font-semibold text-[#f5f0e8] mb-2">Savor, Don&apos;t Overindulge</h4>
           <p className="text-[#b8a690] text-sm max-w-xs">
             Enjoy the artistry of premium spirits, but always know your limit and take pride in moderation.
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <Shield className="text-[#d4af37] w-14 h-14 mb-3" />
+          <Shield className="text-[#BE9252] w-14 h-14 mb-3" />
           <h4 className="text-lg font-semibold text-[#f5f0e8] mb-2">Never Drink & Drive</h4>
           <p className="text-[#b8a690] text-sm max-w-xs">
             Ensure everyone gets home safe. Choose a designated driver or trusted ride for every celebration.
           </p>
         </div>
         <div className="flex flex-col items-center text-center">
-          <Scale className="text-[#d4af37] w-14 h-14 mb-3" />
+          <Scale className="text-[#BE9252] w-14 h-14 mb-3" />
           <h4 className="text-lg font-semibold text-[#f5f0e8] mb-2">Legal Drinking Age Only</h4>
           <p className="text-[#b8a690] text-sm max-w-xs">
             Our products are intended only for those above the legal drinking age in their locality.
@@ -68,7 +68,7 @@ const ResponsibleDrinkingSection = () => (
 
       {/* Footer message */}
       <motion.p
-        className="mt-12 text-center text-base md:text-lg text-[#d4af37] font-serif font-medium tracking-wide"
+        className="mt-12 text-center text-base md:text-lg text-[#BE9252] font-serif font-medium tracking-wide"
         initial={{ opacity: 0 }}
         whileInView={{ opacity: 1 }}
         viewport={{ once: true }}

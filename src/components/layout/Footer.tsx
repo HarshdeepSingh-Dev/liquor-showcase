@@ -1,6 +1,7 @@
 "use client";
+import Image from "next/image";
 import { motion } from "framer-motion";
-import { Instagram, Facebook, Linkedin, Youtube, Twitter } from "lucide-react";
+import { Instagram, Facebook, Linkedin, Youtube, Mail } from "lucide-react";
 
 const footerLinks = [
   "Home",
@@ -20,11 +21,11 @@ const socialLinks = [
   { icon: Facebook, href: "#" },
   { icon: Linkedin, href: "#" },
   { icon: Youtube, href: "#" },
-  { icon: Twitter, href: "#" }
+  { icon: Mail, href: "mailto:Houseofsomrass@gmail.com" }
 ];
 
 const Footer = () => (
-  <footer className="relative bg-gradient-to-br from-[#0f0806] via-[#1a0f0a] to-[#2d1810] text-[#d4af37] font-serif select-none">
+  <footer className="relative bg-gradient-to-br from-[#0f0806] via-[#1a0f0a] to-[#2d1810] text-[#BE9252] font-serif select-none">
     <div className="max-w-7xl mx-auto px-6 py-16 flex flex-col items-center gap-12">
       {/* Logo */}
       <motion.div 
@@ -33,11 +34,12 @@ const Footer = () => (
         animate={{ opacity: 1, y: 0 }} 
         transition={{ duration: 0.8 }}
       >
-        <svg className="w-14 h-14 fill-current" viewBox="0 0 64 64" aria-hidden="true" focusable="false">
-          {/* Simplified stylish logo mark */}
-          <circle cx="32" cy="32" r="30" stroke="#d4af37" strokeWidth="2" fill="none" />
-          <path d="M20 44 L32 20 L44 44 Z" fill="#d4af37" />
-        </svg>
+        <Image
+                src="/images/home-page/brand_logo1.png"
+                alt="House of somras"
+                width={100}
+                height={100}
+              />
         <span className="text-lg font-bold tracking-widest uppercase">House of somrass</span>
       </motion.div>
 
@@ -53,9 +55,8 @@ const Footer = () => (
             <a 
               href={href} 
               aria-label="Social link"
-              className="text-[#d4af37] hover:text-[#f4d03f] transition-colors duration-300 text-xl" 
+              className="text-[#BE9252] hover:text-[#f4d03f] transition-colors duration-300 text-xl" 
               target="_blank" 
-              rel="noopener noreferrer"
             >
               <Icon />
             </a>

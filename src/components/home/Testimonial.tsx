@@ -132,7 +132,7 @@ const Testimonials = () => {
             {/* Animated Background Elements */}
             <div className="absolute inset-0">
                 <motion.div
-                    className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-l from-[#d4af37]/8 to-transparent rounded-full blur-3xl"
+                    className="absolute top-40 -right-32 w-96 h-96 bg-gradient-to-l from-[#BE9252]/8 to-transparent rounded-full blur-3xl"
                     animate={{
                         scale: [1, 1.2, 1],
                         opacity: [0.3, 0.6, 0.3],
@@ -157,7 +157,7 @@ const Testimonials = () => {
                     animate={isInView ? "visible" : "hidden"}
                 >
                     <motion.div className="inline-block mb-6" variants={itemVariants}>
-                        <span className="text-[#d4af37] text-sm font-medium tracking-[0.2em] uppercase border border-[#d4af37]/30 px-4 py-2 rounded-full backdrop-blur-sm">
+                        <span className="text-[#BE9252] text-sm font-medium tracking-[0.2em] uppercase border border-[#BE9252]/30 px-4 py-2 rounded-full backdrop-blur-sm">
                             What Our Connoisseurs Say
                         </span>
                     </motion.div>
@@ -168,7 +168,7 @@ const Testimonials = () => {
                     >
                         Crafted to
                         <motion.span
-                            className="block text-transparent bg-gradient-to-r from-[#d4af37] to-[#f4d03f] bg-clip-text"
+                            className="block text-[#BE9252]"
                             variants={itemVariants}
                         >
                             Perfection
@@ -208,7 +208,7 @@ const Testimonials = () => {
                                             animate={{ opacity: 1, scale: 1 }}
                                             transition={{ delay: i * 0.1 + 0.3 }}
                                         >
-                                            <svg className="w-6 h-6 text-[#d4af37]" fill="currentColor" viewBox="0 0 20 20">
+                                            <svg className="w-6 h-6 text-[#BE9252]" fill="currentColor" viewBox="0 0 20 20">
                                                 <path d="M9.049 2.927c.3-.921 1.603-.921 1.902 0l1.07 3.292a1 1 0 00.95.69h3.462c.969 0 1.371 1.24.588 1.81l-2.8 2.034a1 1 0 00-.364 1.118l1.07 3.292c.3.921-.755 1.688-1.54 1.118l-2.8-2.034a1 1 0 00-1.175 0l-2.8 2.034c-.784.57-1.838-.197-1.539-1.118l1.07-3.292a1 1 0 00-.364-1.118L2.98 8.72c-.783-.57-.38-1.81.588-1.81h3.461a1 1 0 00.951-.69l1.07-3.292z" />
                                             </svg>
                                         </motion.div>
@@ -222,7 +222,7 @@ const Testimonials = () => {
 
                                 {/* Author Info */}
                                 <div className="flex items-center space-x-4">
-                                    <div className="w-16 h-16 relative rounded-full overflow-hidden border-2 border-[#d4af37]/30">
+                                    <div className="w-16 h-16 relative rounded-full overflow-hidden border-2 border-[#BE9252]/30">
                                         <Image
                                             src="/images/home-page/client.png"
                                             alt={currentTestimonial.name}
@@ -234,7 +234,7 @@ const Testimonials = () => {
                                         <h4 className="text-xl font-semibold text-[#f5f0e8]">
                                             {currentTestimonial.name}
                                         </h4>
-                                        <p className="text-[#d4af37] font-medium">
+                                        <p className="text-[#BE9252] font-medium">
                                             {currentTestimonial.title}
                                         </p>
                                         <p className="text-[#b8a690] text-sm">
@@ -249,7 +249,7 @@ const Testimonials = () => {
                                 <div className="relative w-full h-96 md:h-[500px] rounded-2xl overflow-hidden">
                                     <div className="absolute inset-0 bg-gradient-to-t from-[#1a0f0a]/60 via-transparent to-transparent z-10" />
                                     <motion.div
-                                        className="absolute inset-0 bg-gradient-to-br from-[#d4af37]/20 to-transparent z-20"
+                                        className="absolute inset-0 bg-gradient-to-br from-[#BE9252]/20 to-transparent z-20"
                                         animate={{
                                             opacity: [0.2, 0.35, 0.2]
                                         }}
@@ -272,7 +272,7 @@ const Testimonials = () => {
                     <div className="flex justify-center items-center space-x-8 mt-12">
                         {/* Previous Button */}
                         <motion.button
-                            className="p-3 rounded-full border-2 border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37] transition-all duration-300"
+                            className="p-3 rounded-full border-2 border-[#BE9252]/30 text-[#BE9252] hover:bg-[#BE9252]/10 hover:border-[#BE9252] transition-all duration-300"
                             onClick={prevTestimonial}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -288,8 +288,8 @@ const Testimonials = () => {
                                 <motion.button
                                     key={index}
                                     className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentIndex
-                                        ? 'bg-[#d4af37] scale-125'
-                                        : 'bg-[#d4af37]/30 hover:bg-[#d4af37]/60'
+                                        ? 'bg-[#BE9252] scale-125'
+                                        : 'bg-[#BE9252]/30 hover:bg-[#BE9252]/60'
                                         }`}
                                     onClick={() => setCurrentIndex(index)}
                                     whileHover={{ scale: 1.2 }}
@@ -300,7 +300,7 @@ const Testimonials = () => {
 
                         {/* Next Button */}
                         <motion.button
-                            className="p-3 rounded-full border-2 border-[#d4af37]/30 text-[#d4af37] hover:bg-[#d4af37]/10 hover:border-[#d4af37] transition-all duration-300"
+                            className="p-3 rounded-full border-2 border-[#BE9252]/30 text-[#BE9252] hover:bg-[#BE9252]/10 hover:border-[#BE9252] transition-all duration-300"
                             onClick={nextTestimonial}
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
@@ -314,7 +314,7 @@ const Testimonials = () => {
 
                 {/* Additional Social Proof */}
                 <motion.div
-                    className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-[#d4af37]/20"
+                    className="grid grid-cols-2 md:grid-cols-4 gap-8 mt-20 pt-16 border-t border-[#BE9252]/20"
                     variants={containerVariants}
                     initial="hidden"
                     animate={isInView ? "visible" : "hidden"}
@@ -327,7 +327,7 @@ const Testimonials = () => {
                     ].map((stat, index) => (
                         <motion.div key={index} className="text-center" variants={itemVariants}>
                             <motion.div
-                                className="text-3xl md:text-4xl font-bold text-[#d4af37] mb-2"
+                                className="text-3xl md:text-4xl font-bold text-[#BE9252] mb-2"
                                 variants={itemVariants}
                             >
                                 {stat.number}
