@@ -69,11 +69,11 @@ const BrandStory = () => {
 
                         <motion.div className="space-y-4 text-center md:text-start text-[#d0c4b6]" variants={itemVariants}>
                             <p className="text-lg md:text-xl text-[#BE9252] leading-relaxed font-semibold font-serif">
-                                "Emarti - The Spirit of Indian Sweetness"
+                                &quot;Emarti - The Spirit of Indian Sweetness&quot;
                             </p>
                             
                             <p className="text-base md:text-lg leading-normal opacity-90">
-                                Every culture has its own flavor of Joy for India, it's the sweetness of Imarti golden, rich, and timelessly indulgent.
+                                Every culture has its own flavor of Joy for India, it&quot;s the sweetness of Imarti golden, rich, and timelessly indulgent.
                                  <span className="text-[#BE9252] font-medium"> From that same sweetness and warmth comes Emarti</span>, a whiskey born from tradition, crafted with elegance, and perfected with patience.
 
                             </p>

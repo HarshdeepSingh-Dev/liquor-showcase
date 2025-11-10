@@ -21,7 +21,7 @@ const socialLinks = [
   { icon: Facebook, href: "#" },
   { icon: Linkedin, href: "#" },
   { icon: Youtube, href: "#" },
-  { icon: Mail, href: "mailto:Houseofsomrass@gmail.com" }
+  { icon: Mail, href: "mailto:care.houseofsomrass@gmail.com" }
 ];
 
 const Footer = () => (
